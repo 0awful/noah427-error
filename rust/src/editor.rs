@@ -2,9 +2,7 @@ use godot::engine::Engine;
 use godot::prelude::Node3D;
 use godot::prelude::*;
 
-#[path = "map.rs"]
-mod map;
-use map::MapData;
+use crate::map::MapData;
 
 #[derive(GodotClass)]
 #[class(base=Node3D, tool)]
@@ -24,7 +22,7 @@ impl INode3D for MapEditor {
         };
     }
 
-    fn process(&mut self, _delta: f64) { 
+    fn process(&mut self, _delta: f64) {
         if !Engine::singleton().is_editor_hint() {
             return;
         }
