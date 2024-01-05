@@ -1,6 +1,6 @@
 use godot::prelude::*;
-mod editor;
-mod map;
+pub mod editor;
+pub mod map;
 struct Rust;
 
 #[gdextension]
